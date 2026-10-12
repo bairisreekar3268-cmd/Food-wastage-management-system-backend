@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: food-wastage-backend
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: CORS_ORIGIN_PATTERNS
+        value: https://*.vercel.app,https://*.netlify.app
